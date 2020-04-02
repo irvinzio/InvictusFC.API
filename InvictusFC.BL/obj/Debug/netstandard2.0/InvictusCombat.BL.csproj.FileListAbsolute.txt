@@ -1,0 +1,11 @@
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\bin\Debug\netstandard2.0\InvictusCombat.BL.deps.json
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\bin\Debug\netstandard2.0\InvictusCombat.BL.dll
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\bin\Debug\netstandard2.0\InvictusCombat.BL.pdb
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\bin\Debug\netstandard2.0\InvictusCombat.Data.dll
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\bin\Debug\netstandard2.0\InvictusCombat.Data.pdb
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\obj\Debug\netstandard2.0\InvictusCombat.BL.csprojAssemblyReference.cache
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\obj\Debug\netstandard2.0\InvictusCombat.BL.AssemblyInfoInputs.cache
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\obj\Debug\netstandard2.0\InvictusCombat.BL.AssemblyInfo.cs
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\obj\Debug\netstandard2.0\InvictusCombat.BL.csproj.CopyComplete
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\obj\Debug\netstandard2.0\InvictusCombat.BL.dll
+C:\others\Invictus\InvictusCombat.API\InvictusCombat.BL\obj\Debug\netstandard2.0\InvictusCombat.BL.pdb

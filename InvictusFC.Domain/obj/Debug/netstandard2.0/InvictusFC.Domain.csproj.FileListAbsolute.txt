@@ -1,0 +1,8 @@
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\bin\Debug\netstandard2.0\InvictusFC.Domain.deps.json
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\bin\Debug\netstandard2.0\InvictusFC.Domain.dll
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\bin\Debug\netstandard2.0\InvictusFC.Domain.pdb
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\obj\Debug\netstandard2.0\InvictusFC.Domain.AssemblyInfoInputs.cache
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\obj\Debug\netstandard2.0\InvictusFC.Domain.AssemblyInfo.cs
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\obj\Debug\netstandard2.0\InvictusFC.Domain.dll
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\obj\Debug\netstandard2.0\InvictusFC.Domain.pdb
+C:\others\Invictus\InvictusFC.API\InvictusFC.Domain\obj\Debug\netstandard2.0\InvictusFC.Domain.csprojAssemblyReference.cache
