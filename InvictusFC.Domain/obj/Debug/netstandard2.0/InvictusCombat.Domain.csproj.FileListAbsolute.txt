@@ -1,8 +1,0 @@
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\bin\Debug\netstandard2.0\InvictusCombat.Domain.deps.json
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\bin\Debug\netstandard2.0\InvictusCombat.Domain.dll
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\bin\Debug\netstandard2.0\InvictusCombat.Domain.pdb
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\obj\Debug\netstandard2.0\InvictusCombat.Domain.AssemblyInfoInputs.cache
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\obj\Debug\netstandard2.0\InvictusCombat.Domain.AssemblyInfo.cs
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\obj\Debug\netstandard2.0\InvictusCombat.Domain.dll
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\obj\Debug\netstandard2.0\InvictusCombat.Domain.pdb
-C:\others\Invictus\InvictusCombat.API\InvictusCombat.Domain\obj\Debug\netstandard2.0\InvictusCombat.Domain.csprojAssemblyReference.cache
