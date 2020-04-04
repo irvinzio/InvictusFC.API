@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using InvictusFC.BL;
 using InvictusFC.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace InvictusFC.API.Controllers
 {   
@@ -12,10 +13,12 @@ namespace InvictusFC.API.Controllers
     [Route("api/v1/[controller]")]
     public class UserController : ControllerBase
     {
+        private readonly ILogger<UserController> _logger;
         private IUserManager _userManager;
-        public UserController(IUserManager userManager)
+        public UserController(IUserManager userManager, ILogger<UserController> logger)
         {
             _userManager = userManager;
+            _logger = logger;
         }
         // GET api/values
         [HttpGet]
@@ -26,27 +29,30 @@ namespace InvictusFC.API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<User> Get(Guid guid)
         {
-            return "value";
+            return _userManager.GetUserById(guid);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public User Post([FromBody] User user)
         {
+            return _userManager.SaveUser(user);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(Guid id, [FromBody] User user)
         {
+            _userManager.SaveUser(user);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
+            _userManager.DeleteUser(id);
         }
     }
 }
