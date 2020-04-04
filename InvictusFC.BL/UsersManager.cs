@@ -11,10 +11,12 @@ namespace InvictusFC.BL
     public interface IUserManager
     {
         List<User> GetAllUsers();
-        User GetUserById(Guid id);
+        List<User> GetAllClients();
         List<User> GetAllEmployees();
+        User GetUserById(Guid id);
         User SaveUser(User user);
-        User UpdateUser();
+        User UpdateUser(User user);
+        void DeleteUser(Guid userId);
     }
     public class UserManager : IUserManager
     {
@@ -25,27 +27,34 @@ namespace InvictusFC.BL
         }
         public List<User> GetAllUsers()
         {
-            return _userRepository.GetAll().ToList();
+            return _userRepository.Get().ToList();
         }
-
-        public User GetUserById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<User> GetAllEmployees()
         {
-            throw new NotImplementedException();
+            return _userRepository.Get().ToList();
+        }
+        public List<User> GetAllClients()
+        {
+            return _userRepository.Get().ToList();
+        }
+        public User GetUserById(Guid id)
+        {
+            return _userRepository.Get(id);
         }
 
         public User SaveUser(User user)
         {
-            throw new NotImplementedException();
+            return _userRepository.Add(user);
         }
 
-        public User UpdateUser()
+        public User UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            return _userRepository.Update(user);
+        }
+
+        public void DeleteUser(Guid id)
+        {
+            _userRepository.Delete(id);
         }
     }
 }
