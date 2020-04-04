@@ -36,7 +36,24 @@ namespace InvictusFC.API
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Invicti Functional Combat API",
+                    Description = "API to interact with Invictus Data",
+                    //TermsOfService = new Uri("TDB"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Irving Ramirez",
+                        Email = "Irvinzio.ram@gmail.com",
+                        Url = new Uri("https://www.linkedin.com/in/irving-ramirez-847395a5/"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "TBD",
+                        //Url = new Uri("TDB"),
+                    }
+                });
             });
 
             var configBuilder = new ConfigurationBuilder()
