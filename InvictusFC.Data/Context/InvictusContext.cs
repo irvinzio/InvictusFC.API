@@ -10,8 +10,8 @@ namespace InvictusFC.Data.Context
     {
         public InvictusContext(DbContextOptions<InvictusContext> options)
         : base(options)
-        {
-        }
+        {}
+       
 
         public DbSet<User> Users { get; set; }
         public DbSet<Address> Addresses { get; set; }
