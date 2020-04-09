@@ -4,25 +4,33 @@ using System.Text;
 
 namespace InvictusFC.Domain.Enums
 {
-    class Enums
-    {
-        enum RolEnum
+        public enum RolEnum
         {
             Admin,
             Manager
         }
-        enum UserTypeEnum
+        public enum UserTypeEnum
         {
             Client,
             Prospect,
             Coach
         }
-        enum IdentificationEum
+        public enum IdentificationEum
         {
             INE,
             IFE,
             Passport,
             DrivingLicence
         }
-    }
+        public enum CountryEnum
+        {
+            Mexico
+        }
+        public enum StateEnum
+        {
+            Guadalajara,
+            Zapopan,
+            Tlajomulco,
+            Tonala
+        }
 }
