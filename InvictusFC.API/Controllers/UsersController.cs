@@ -21,34 +21,37 @@ namespace InvictusFC.API.Controllers
             _logger = logger;
         }
         // GET api/values
+        [HttpGet("clients")]
+        public ActionResult<IEnumerable<User>> GetClients(int officeBranchId)
+        {
+            return _userManager.GetAllClients(officeBranchId);
+        }
+
+        [HttpGet("coaches")]
+        public ActionResult<IEnumerable<User>> GetCoaches(int officeBranchId)
+        {
+            return _userManager.GetAllCoaches(officeBranchId);
+        }
         [HttpGet]
-        public ActionResult<IEnumerable<User>> Get()
+        public ActionResult<IEnumerable<User>> GetUser(int officeBranchId)
         {
-            return _userManager.GetAllUsers();
+            return _userManager.GetAllUsers(officeBranchId);
         }
-
-        // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<User> Get(Guid guid)
+        public ActionResult<User> Get(Guid id)
         {
-            return _userManager.GetUserById(guid);
+            return _userManager.GetUserById(id);
         }
-
-        // POST api/values
         [HttpPost]
         public User Post([FromBody] User user)
         {
             return _userManager.SaveUser(user);
         }
-
-        // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(Guid id, [FromBody] User user)
         {
             _userManager.SaveUser(user);
         }
-
-        // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
