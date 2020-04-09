@@ -10,9 +10,9 @@ namespace InvictusFC.BL
 {
     public interface IUserManager
     {
-        List<User> GetAllUsers();
-        List<User> GetAllClients();
-        List<User> GetAllEmployees();
+        List<User> GetAllUsers(int branchOffice);
+        List<User> GetAllClients(int branchOffice);
+        List<User> GetAllCoaches(int branchOffice);
         User GetUserById(Guid id);
         User SaveUser(User user);
         User UpdateUser(User user);
@@ -25,21 +25,22 @@ namespace InvictusFC.BL
         {
             _userRepository = userRepo;
         }
-        public List<User> GetAllUsers()
+        public List<User> GetAllUsers(int branchOffice)
         {
-            return _userRepository.Get().ToList();
+            return _userRepository.GetAllUsers(branchOffice).ToList();
         }
-        public List<User> GetAllEmployees()
+        public List<User> GetAllCoaches(int branchOffice)
         {
-            return _userRepository.Get().ToList();
+            return _userRepository.GetAllCoaches(branchOffice).ToList();
         }
-        public List<User> GetAllClients()
+        public List<User> GetAllClients(int branchOffice)
         {
-            return _userRepository.Get().ToList();
+            return _userRepository.GetAllClients(branchOffice).ToList();
         }
         public User GetUserById(Guid id)
         {
-            return _userRepository.Get(id);
+            var user = _userRepository.GetUserById(id);
+            return user;
         }
 
         public User SaveUser(User user)
