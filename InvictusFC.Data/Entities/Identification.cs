@@ -11,9 +11,12 @@ namespace InvictusFC.Data.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid IdentificationId { get; set; }
+        [Required]
         public int IdentificationType { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Number { get; set; }
         public Guid UserId { get; set; }
-        public virtual User User { get; set; }
+        public User User { get; set; }
     }
 }

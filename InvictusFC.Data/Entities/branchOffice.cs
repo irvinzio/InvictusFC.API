@@ -10,9 +10,10 @@ namespace InvictusFC.Data.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid BranchOfficeId { get; set; }
+        public int BranchOfficeId { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Name { get; set; }
-
-        public virtual User User { get; set; }
+        public ICollection<User> User { get; set; }
     }
 }

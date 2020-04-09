@@ -11,15 +11,26 @@ namespace InvictusFC.Data.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserId { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Name { get; set; }
+        [Required]
+        [StringLength(100)]
         public string LastName { get; set; }
+        [StringLength(100)]
         public string SurName { get; set; }
+        [Required]
+        [StringLength(20)]
         public string Cellphone { get; set; }
+        [Required]
+        [StringLength(500)]
+        [EmailAddressAttribute]
         public string Email { get; set; }
+        [Required]
         public int UserType { get; set; }
-        public Guid BranchOfficeId { get; set; }
-        public virtual BranchOffice BranchOffice { get; set; }
-        public virtual Address Address { get; set; }
-        public virtual Identification Identification { get; set; }
+        [Required]
+        public int BranchOfficeId { get; set; }
+        public Address Address { get; set; }
+        public Identification Identification { get; set; }
     }
 }
