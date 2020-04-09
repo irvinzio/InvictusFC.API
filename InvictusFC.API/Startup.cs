@@ -5,8 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using InvictusFC.BL;
 using InvictusFC.Data.Context;
+using InvictusFC.Data.Entities;
 using InvictusFC.Data.Repositories;
 using InvictusFC.Domain.Configuration;
+using InvictusFC.Domain.Enums;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -70,6 +72,12 @@ namespace InvictusFC.API
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserManager, UserManager>();
+
+            services.AddControllersWithViews()
+            .AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +87,37 @@ namespace InvictusFC.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<InvictusContext>();
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+
+                context.BranchOffices.Add(new BranchOffice { Name = "Invictus" });
+                context.Users.Add(
+                    new User {
+                          Name = "poo",
+                          LastName = "tito",
+                          SurName = "gay",
+                          Cellphone = "33123456",
+                          Email = "pootito@gay.com",
+                          UserType = 0,
+                          BranchOfficeId= 1,
+                          Identification = new Identification { Number = "hdsptm123", IdentificationType=0 },
+                          Address = new Address {
+                            StreetName = "Juan manuel",
+                            InteriorNumber = "1380B",
+                            ExteriorNumber = "",
+                            County = "",
+                            Colony = "santa teresita",
+                            State = (int)StateEnum.Guadalajara,
+                            Country = (int)CountryEnum.Mexico
+                          }
+                    });
+                context.SaveChanges();
+            }
+
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
