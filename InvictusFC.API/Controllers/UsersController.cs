@@ -1,61 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using InvictusFC.BL;
-using InvictusFC.Data.Entities;
+using InvictusFC.Service;
+using InvictusFC.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace InvictusFC.API.Controllers
-{   
+{
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
-        private readonly ILogger<UserController> _logger;
-        private IUserManager _userManager;
-        public UserController(IUserManager userManager, ILogger<UserController> logger)
+        private readonly ILogger<UsersController> _logger;
+        private IUserService _userService;
+        public UsersController(IUserService ClientsManager, ILogger<UsersController> logger)
         {
-            _userManager = userManager;
+            _userService = ClientsManager;
             _logger = logger;
         }
         // GET api/values
         [HttpGet("clients")]
-        public ActionResult<IEnumerable<User>> GetClients(int officeBranchId)
+        public ActionResult<IEnumerable<ClientResponse>> GetClients(int officeBranchId)
         {
-            return _userManager.GetAllClients(officeBranchId);
+            return _userService.GetAllClients(officeBranchId);
         }
 
         [HttpGet("coaches")]
-        public ActionResult<IEnumerable<User>> GetCoaches(int officeBranchId)
+        public ActionResult<IEnumerable<ClientResponse>> GetCoaches(int officeBranchId)
         {
-            return _userManager.GetAllCoaches(officeBranchId);
-        }
-        [HttpGet]
-        public ActionResult<IEnumerable<User>> GetUser(int officeBranchId)
-        {
-            return _userManager.GetAllUsers(officeBranchId);
+            return _userService.GetAllCoaches(officeBranchId);
         }
         [HttpGet("{id}")]
-        public ActionResult<User> Get(Guid id)
+        public ActionResult<ClientResponse> Get(Guid id)
         {
-            return _userManager.GetUserById(id);
+            return _userService.GetUserById(id);
         }
         [HttpPost]
-        public User Post([FromBody] User user)
+        public ClientResponse Post([FromBody] ClientRequest Client)
         {
-            return _userManager.SaveUser(user);
+            return _userService.SaveUser(Client);
         }
         [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody] User user)
+        public void Put(Guid id, [FromBody] ClientRequest Client)
         {
-            _userManager.SaveUser(user);
+            _userService.UpdateUser(Client,id);
         }
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
-            _userManager.DeleteUser(id);
+            _userService.DeleteUser(id);
         }
     }
 }

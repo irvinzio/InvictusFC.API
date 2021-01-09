@@ -1,9 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using InvictusFC.BL;
 using InvictusFC.Data.Context;
 using InvictusFC.Data.Entities;
 using InvictusFC.Data.Repositories;
@@ -11,12 +7,10 @@ using InvictusFC.Domain.Configuration;
 using InvictusFC.Domain.Enums;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace InvictusFC.API
@@ -71,7 +65,6 @@ namespace InvictusFC.API
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IUserManager, UserManager>();
 
             services.AddControllersWithViews()
             .AddNewtonsoftJson(options =>
