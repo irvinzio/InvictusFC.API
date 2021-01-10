@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InvictusFC.BL\InvictusFC.Service.csproj" />
     <ProjectReference Include="..\InvictusFC.Data\InvictusFC.Data.csproj" />
     <ProjectReference Include="..\InvictusFC.Domain\InvictusFC.Domain.csproj" />
+    <ProjectReference Include="..\InvictusFC.Service\InvictusFC.Service.csproj" />
   </ItemGroup>
 
 

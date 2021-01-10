@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using InvictusFC.Service;
 using InvictusFC.Domain.Models;
+using InvictusFC.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
