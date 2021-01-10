@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace InvictusFC.Data.Entities
 {
@@ -28,6 +26,8 @@ namespace InvictusFC.Data.Entities
         public string Email { get; set; }
         [Required]
         public int UserType { get; set; }
+        [Required]
+        public int isActive { get; set; }
         [Required]
         public int BranchOfficeId { get; set; }
         public Address Address { get; set; }
